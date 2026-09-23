@@ -1,6 +1,13 @@
 
 # Step 1 Project Contract
-## Team and responsibilities- Member name - first responsibility
+
+| Member              | Role                                       | Primary Responsibility                                                                                                                                                                           |
+| ------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Ayush Dubey**     | **Group Leader & System Integration Lead** | Coordinate the team, design overall system architecture, integrate ANN + Fuzzy Logic + baseline, manage GitHub/repository, track milestones, and coordinate final testing/demo.                  |
+| **Himanshu**        | **ANN / Machine Learning Lead**            | Develop the ANN risk classifier, perform preprocessing and normalization, implement training/testing, evaluate prediction performance, and generate ANN performance/convergence visualizations.  |
+| **Pradhuman Dixit** | **Fuzzy Logic & Explainability Lead**      | Design fuzzy linguistic variables and membership functions, implement fuzzification/rules/aggregation/defuzzification, handle borderline cases, and create fuzzy-rule/membership visualizations. |
+| **Vinit Sharama**   | **Data, Evaluation & UI/Deployment Lead**  | Prepare and validate the dataset/scenarios, implement baseline score-threshold method, perform comparison/evaluation, develop the Streamlit UI, and handle deployment and result visualization.  |
+
 ## One-sentence problem
 Given anonymous credit features, estimate risk, confidence, and a review recommendation.
 ## User of the product
