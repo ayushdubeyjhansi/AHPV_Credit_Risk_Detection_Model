@@ -9,7 +9,8 @@
 | **Vinit Sharama**   | **Data, Evaluation & UI/Deployment Lead**  | Prepare and validate the dataset/scenarios, implement baseline score-threshold method, perform comparison/evaluation, develop the Streamlit UI, and handle deployment and result visualization.  |
 
 ## One-sentence problem
-Given anonymous credit features, estimate risk, confidence, and a review recommendation.
+Given anonymous credit-related features such as income, debt, and repayment history, estimate the applicant’s credit risk, confidence level, and recommended action (review, approve, or reject) using an explainable decision-support system.
+
 ## User of the product
 An educational risk reviewer using an explainable decision-support prototype.
 ## Inputs and units
