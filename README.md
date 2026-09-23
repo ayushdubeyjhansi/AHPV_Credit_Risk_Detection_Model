@@ -12,15 +12,15 @@ Using **ANN** & **Fuzzy logic** to build and train a credit risk detection model
 
 | Column | Type | Description | Example Values |
 | :--- | :--- | :--- | :--- |
-| `age` | Integer | Age of the customer | `35`, `54` |
-| `job` | Categorical | Type of employment | `management`, `technician`, `blue-collar` |
+| `age` | Integer | Age of the customer | `18 to 74` |
+| `job` | Categorical | Type of employment | `retired, technician, admin, services, management` |
 | `marital` | Categorical | Marital status | `single`, `married`, `divorced` |
-| `education` | Categorical | Highest education level reached | `primary`, `secondary`, `tertiary`, `unknown` |
-| `default` | Binary / Boolean | Credit default history | `yes`, `no` |
-| `balance` | Numeric | Average yearly balance in account | `1500`, `-200`, `8500` |
-| `housing_loan` | Binary / Boolean | Has an active housing loan | `yes`, `no` |
-| `personal_loan` | Binary / Boolean | Has an active personal loan | `yes`, `no` |
-| `contact` | Categorical | Communication channel used | `cellular`, `telephone`, `unknown` |
+| `education` | Categorical | Highest education level reached | `primary`, `secondary`, `tertiary`|
+| `default` | Binary / Boolean | Credit default history | `1`, `0` |
+| `balance` | Numeric | Average yearly balance in account | `-2000 t0 150k` |
+| `housing_loan` | Binary / Boolean | Has an active housing loan | `1`, `0` |
+| `personal_loan` | Binary / Boolean | Has an active personal loan | `1`, `0` |
+| `contact` | Categorical | Communication channel used | `cellular`, `telephone` |
 | `day` | Integer | Last contact day of the month | `1` to `31` |
 | `month` | Categorical | Last contact month of the year | `jan`, `may`, `nov` |
 | `duration` | Integer | Last contact duration (seconds) | `120`, `340` |
