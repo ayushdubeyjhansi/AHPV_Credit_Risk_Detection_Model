@@ -12,7 +12,8 @@
 Given anonymous credit-related features such as income, debt, and repayment history, estimate the applicant’s credit risk, confidence level, and recommended action (review, approve, or reject) using an explainable decision-support system.
 
 ## User of the product
-An educational risk reviewer using an explainable decision-support prototype.
+An educational risk reviewer who uses an explainable decision-support prototype to assess credit risk, understand model reasoning, and review recommended actions.
+
 ## Inputs and units
 Write the field table from the next page.
 ## Outputs and units
