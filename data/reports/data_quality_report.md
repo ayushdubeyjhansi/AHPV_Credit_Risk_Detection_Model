@@ -117,3 +117,10 @@ A class-wise stratified sampling routine was executed with a single fixed seed t
 
 * **Advisory Decision Support Only**: This model pipeline is developed strictly as a decision-support and risk-scoring tool. It must never function as a fully autonomous rejection engine without human-in-the-loop review by a qualified credit risk officer.
 * **Fair Lending & Demographic Guardrails**: Features such as `age` and `marital` status must be audited for adverse impact and disparate misclassification rates to ensure lending fairness and compliance with statutory non-discrimination standards before any model artifact is considered for deployment.
+---
+## Generated Testing Scenarios & Dataset Integrity
+
+* **Real Empirical Record Count**: 2,556 verified real-world records from the cited baseline dataset.
+* **Generated Scenario Count**: 256 generated stress-test cases (~10% addition), bringing total evaluation artifacts to 2,812 entries.
+* **Authenticity Disclosure**: These additional 256 records represent synthetically constructed stress-test scenarios (edge cases and adversarial stress-testing). They are **not** real-world observations collected from the field or laboratory.
+* **Testing-Only Boundary Rule**: Generated stress-test scenarios are reserved strictly for external resilience evaluation and out-of-distribution robustness testing. Under no circumstances are generated scenarios permitted to enter the training set (`train.csv`), validation set (`validation.csv`), or standard benchmark test set (`test.csv`).
