@@ -41,6 +41,7 @@ An educational risk reviewer who uses an explainable decision-support prototype 
 | Column | Type | Description | Example Values |
 | :--- | :--- | :--- | :--- |
 | `LOAN_APPROVAL` | Binary  | Target label indicating final loan approval status | `1`, `0` |
+
 ## Baseline method
 Write the numbered baseline rules from this guide.
 ## Soft Computing method for M1
