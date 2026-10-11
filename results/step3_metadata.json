@@ -1,0 +1,25 @@
+{
+    "project_name": "AHPV Credit Risk Detection Model",
+    "timestamp": "2026-10-11T09:45:21.669023",
+    "target_column": "LOAN_APPROVAL",
+    "feature_count": 16,
+    "architecture": {
+        "hidden_layer_sizes": [
+            32,
+            16
+        ],
+        "activation": "relu",
+        "solver": "adam",
+        "max_iter": 200,
+        "random_state": 42
+    },
+    "training_run": {
+        "iterations_completed": 137,
+        "final_loss": 0.500872178202388
+    },
+    "dataset_sizes": {
+        "train_rows": 69999,
+        "validation_rows": 14999,
+        "test_rows": 15002
+    }
+}
