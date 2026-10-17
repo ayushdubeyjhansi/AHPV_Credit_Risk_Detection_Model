@@ -1,6 +1,6 @@
 {
     "project_name": "AHPV Credit Risk Detection Model",
-    "timestamp": "2026-10-11T09:45:21.669023",
+    "timestamp": "2026-10-17T22:14:04.194035",
     "target_column": "LOAN_APPROVAL",
     "feature_count": 16,
     "architecture": {

@@ -1,0 +1,2 @@
+Method,Accuracy,Precision,Recall,F1-score,Test_samples
+Majority-class baseline,0.7293694174110119,0.7293694174110119,1.0,0.843509096515572,15002

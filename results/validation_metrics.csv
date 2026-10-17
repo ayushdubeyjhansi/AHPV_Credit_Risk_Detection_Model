@@ -1,3 +1,3 @@
 Split,Threshold,Accuracy,Precision,Recall,F1-Score
-Validation (Default),0.50 (default),0.7495,0.7736,0.9283,0.8439
-Validation (Strict 0.75),0.75,0.6488,0.8521,0.6275,0.7228
+Validation (Default),0.50 (default),0.7493,0.771,0.9336,0.8446
+Validation (Strict 0.75),0.75,0.6558,0.8516,0.6395,0.7305
