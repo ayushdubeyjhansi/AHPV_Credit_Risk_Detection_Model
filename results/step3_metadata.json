@@ -1,6 +1,6 @@
 {
     "project_name": "AHPV Credit Risk Detection Model",
-    "timestamp": "2026-10-17T22:14:04.194035",
+    "timestamp": "2026-10-18T12:03:09.392584",
     "target_column": "LOAN_APPROVAL",
     "feature_count": 16,
     "architecture": {
@@ -21,5 +21,11 @@
         "train_rows": 69999,
         "validation_rows": 14999,
         "test_rows": 15002
+    },
+    "artifacts": {
+        "model_file": "ann_pipeline_model.joblib",
+        "metrics_file": "step3_ann_metrics.csv",
+        "validation_predictions": "validation_predictions.csv",
+        "test_predictions": "test_predictions.csv"
     }
 }

@@ -37,3 +37,23 @@ All training artifacts and evaluation outputs are persisted to disk[cite: 17]:
 
 ## 7. Model Limitations
 This model provides automated statistical risk scoring based on historical training data[cite: 10, 15]. It does not replace manual credit underwriting, full institutional audits, or real-time regulatory compliance checks. Decisions with borderline confidence thresholds require human underwriter review to prevent unintended financial exposure or discriminatory bias[cite: 2, 16].
+---
+
+## 8. Product Integration: Loan Decision Card & Risk Meters (Product v1)
+
+### Overview
+Translates raw model probability outputs (`ann_pipeline.predict_proba`) into an interpretable operational interface based on `product-v1-sketch.png`[cite: 1, 2].
+
+### Key Components:
+1. **Decision Status & Thresholding**:
+   - **Approved (Green)**: Probability score $\ge 0.75$ (strictly enforces low default risk)[cite: 2].
+   - **Rejected / Underwriter Referral (Red/Amber)**: Probability score $< 0.75$[cite: 2].
+2. **Dual Risk Meters**:
+   - **Approval Probability Gauge**: Direct model confidence score ($0\% - 100\%$)[cite: 2].
+   - **Default Risk Gauge**: Complement probability ($1.0 - \text{Approval Score}$)[cite: 2].
+3. **Operational Policy Bands**:
+   - **$\ge 75\%$**: Automated approval & instant loan disbursement[cite: 2].
+   - **$50\% - 74\%$**: Borderline confidence; routes applicant to credit underwriter for manual review[cite: 2].
+   - **$< 50\%$**: High credit risk rejection[cite: 2].
+4. **Artifacts**:
+   - Visual plot saved as `results/product_v1_decision_card.png`[cite: 1].
