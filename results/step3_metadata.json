@@ -1,31 +1,58 @@
 {
-    "project_name": "AHPV Credit Risk Detection Model",
-    "timestamp": "2026-10-18T12:03:09.392584",
-    "target_column": "LOAN_APPROVAL",
-    "feature_count": 16,
-    "architecture": {
-        "hidden_layer_sizes": [
-            32,
-            16
-        ],
-        "activation": "relu",
-        "solver": "adam",
-        "max_iter": 200,
-        "random_state": 42
+  "features": [
+    "age",
+    "job",
+    "marital",
+    "education",
+    "default",
+    "balance",
+    "housing_loan",
+    "personal_loan",
+    "contact",
+    "day",
+    "month",
+    "duration",
+    "campaign",
+    "pdays",
+    "previous",
+    "poutcome"
+  ],
+  "numeric_features": [
+    "age",
+    "balance",
+    "day",
+    "duration",
+    "campaign",
+    "pdays",
+    "previous"
+  ],
+  "categorical_features": [
+    "job",
+    "marital",
+    "education",
+    "default",
+    "housing_loan",
+    "personal_loan",
+    "contact",
+    "month",
+    "poutcome"
+  ],
+  "architecture": "MLPClassifier(32, 16)",
+  "decision_threshold": 0.75,
+  "metrics": {
+    "validation": {
+      "split": "Validation",
+      "accuracy": 0.7525168344556303,
+      "precision": 0.7680783208484758,
+      "recall": 0.9465313956676721,
+      "f1_score": 0.8480183426138225
     },
-    "training_run": {
-        "iterations_completed": 137,
-        "final_loss": 0.500872178202388
-    },
-    "dataset_sizes": {
-        "train_rows": 69999,
-        "validation_rows": 14999,
-        "test_rows": 15002
-    },
-    "artifacts": {
-        "model_file": "ann_pipeline_model.joblib",
-        "metrics_file": "step3_ann_metrics.csv",
-        "validation_predictions": "validation_predictions.csv",
-        "test_predictions": "test_predictions.csv"
+    "test": {
+      "split": "Test",
+      "accuracy": 0.7530995867217705,
+      "precision": 0.7702359617682198,
+      "recall": 0.9426978614512886,
+      "f1_score": 0.8477849921919948
     }
+  }
 }
