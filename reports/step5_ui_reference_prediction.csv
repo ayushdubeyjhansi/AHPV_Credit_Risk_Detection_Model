@@ -1,0 +1,2 @@
+status	predicted_class	label	approval_probability	default_risk	policy_threshold	action	notice	age	balance	day	duration	campaign	pdays	previous	job	marital	education	default	housing_loan	personal_loan	contact	month	poutcome
+APPROVED	1	Loan Approved	93.26	6.74	>= 75.0%	Disburse Loan	Decision support score only. This does not replace formal regulatory checks.	35	4500	15	250	1	-1	0	management	married	tertiary	no	no	no	cellular	may	unknown
