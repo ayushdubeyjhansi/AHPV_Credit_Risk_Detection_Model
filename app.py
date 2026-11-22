@@ -50,7 +50,6 @@ DEFAULT_VALUES = {
     "poutcome": "unknown",
 }
 
-
 @st.cache_resource
 def saved_model():
     return load_model()

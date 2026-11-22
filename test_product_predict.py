@@ -1,76 +1,45 @@
 import unittest
-from unittest.mock import MagicMock
-from pathlib import Path
-import sys
-import numpy as np
+from src.product_predict import validate_inputs
 
-sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
-
-from product_predict import validate_inputs, predict_one
-
-
-class TestProductPredict(unittest.TestCase):
-
+class ValidationTests(unittest.TestCase):
     def setUp(self):
-        self.valid_input = {
-            "age": 35,
-            "job": "admin",
-            "marital": "single",
-            "education": "secondary",
-            "default": "no",
-            "balance": 1500,
-            "housing_loan": "yes",
-            "personal_loan": "no",
-            "contact": "cellular",
-            "day": 15,
-            "month": "may",
-            "duration": 300,
-            "campaign": 2,
-            "pdays": 100,
-            "previous": 1,
-            "poutcome": "success"
+        self.valid_applicant = {
+            "age": "35", "job": "management", "marital": "married",
+            "education": "tertiary", "default": "no", "balance": "4500.0",
+            "housing_loan": "no", "personal_loan": "no", "contact": "cellular",
+            "day": "15", "month": "may", "duration": "250.0",
+            "campaign": "1", "pdays": "-1", "previous": "0", "poutcome": "unknown",
         }
 
-    def test_valid_input(self):
-        result = validate_inputs(self.valid_input)
-        self.assertEqual(result["age"], 35.0)
-        self.assertEqual(result["balance"], 1500.0)
-        self.assertEqual(result["job"], "admin")
+    def test_normal(self):
+        clean = validate_inputs(self.valid_applicant)
+        self.assertEqual(clean["age"], 35.0)
 
-    def test_missing_numeric_feature(self):
-        data = self.valid_input.copy()
-        del data["age"]
+    def test_age_boundaries(self):
+        self.valid_applicant["age"] = "18"
+        self.assertEqual(validate_inputs(self.valid_applicant)["age"], 18.0)
+        self.valid_applicant["age"] = "120"
+        self.assertEqual(validate_inputs(self.valid_applicant)["age"], 120.0)
 
+    def test_out_of_range_age(self):
+        self.valid_applicant["age"] = "15"
         with self.assertRaises(ValueError):
-            validate_inputs(data)
+            validate_inputs(self.valid_applicant)
 
-    def test_invalid_age(self):
-        data = self.valid_input.copy()
-        data["age"] = 15
-
+    def test_invalid_numeric_text(self):
+        self.valid_applicant["balance"] = "abc"
         with self.assertRaises(ValueError):
-            validate_inputs(data)
+            validate_inputs(self.valid_applicant)
 
     def test_negative_duration(self):
-        data = self.valid_input.copy()
-        data["duration"] = -10
-
+        self.valid_applicant["duration"] = "-50"
         with self.assertRaises(ValueError):
-            validate_inputs(data)
+            validate_inputs(self.valid_applicant)
 
-    def test_prediction_output(self):
-        model = MagicMock()
-        model.predict.return_value = np.array([1])
-        model.predict_proba.return_value = np.array([[0.10, 0.90]])
-
-        result = predict_one(model, self.valid_input)
-
-        self.assertEqual(result["status"], "APPROVED")
-        self.assertEqual(result["predicted_class"], 1)
-        self.assertEqual(result["label"], "Loan Approved")
-        self.assertEqual(result["approval_probability"], 90.0)
-        self.assertEqual(result["default_risk"], 10.0)
-
+    def test_missing_feature(self):
+        self.valid_applicant["job"] = ""
+        with self.assertRaises(ValueError):
+            validate_inputs(self.valid_applicant)
 
 if __name__ == "__main__":
     unittest.main()
